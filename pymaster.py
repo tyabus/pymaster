@@ -170,12 +170,12 @@ class PyMaster:
 
 		sendFakeInfo(self.sock, "This version is not", gamedir, addr)
 		sendFakeInfo(self.sock, "supported anymore", gamedir, addr)
-		sendFakeInfo(self.sock, "Please update Xash3DFWGS", gamedir, addr)
-		sendFakeInfo(self.sock, "From GooglePlay or GitHub", gamedir, addr)
+		sendFakeInfo(self.sock, "Please update Xash3D", gamedir, addr)
+		sendFakeInfo(self.sock, "From github.com/tyabus/xash3d", gamedir, addr)
 		sendFakeInfo(self.sock, "Эта версия", gamedir, addr)
 		sendFakeInfo(self.sock, "устарела", gamedir, addr)
-		sendFakeInfo(self.sock, "Обновите Xash3DFWGS c", gamedir, addr)
-		sendFakeInfo(self.sock, "GooglePlay или GitHub", gamedir, addr)
+		sendFakeInfo(self.sock, "Обновите Xash3D c", gamedir, addr)
+		sendFakeInfo(self.sock, "github.com/tyabus/xash3d", gamedir, addr)
 
 	def removeServerFromList(self, data, addr):
 		pass
