@@ -234,7 +234,7 @@ class PyMaster:
 def spawn_pymaster(verbose, ip, port):
 	if verbose:
 		logging.getLogger().addHandler(logging.StreamHandler())
-#	logging.getLogger().addHandler(logging.FileHandler(LOG_FILENAME))
+	logging.getLogger().addHandler(logging.FileHandler(LOG_FILENAME))
 	logging.getLogger().setLevel(logging.DEBUG)
 
 	masterMain = PyMaster(ip, port)
