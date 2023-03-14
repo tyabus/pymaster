@@ -221,7 +221,7 @@ class PyMaster:
 			return
 
 		if s.setInfoString( info ):
-			log('Add server: %s:%d, game=%s/%s, protocol=%d, players=%d/%d/%d, version=%s' % (addr[0], addr[1], s.gamemap, s.gamedir, s.protocol, s.players, s.bots, s.maxplayers, s.version))
+			log('Add server: %s:%d, game=%s/%s, protocol=%d, players=%d/%d/%d, os=%s, version=%s' % (addr[0], addr[1], s.gamemap, s.gamedir, s.protocol, s.players, s.bots, s.maxplayers, s.os, s.version))
 		else:
 			log('Failed challenge from %s:%d: %d must be %d' % (addr[0], addr[1], s.challenge, s.challenge2))
 
