@@ -12,7 +12,6 @@ from ipaddress import ip_address, ip_network
 
 from server_entry import ServerEntry
 from protocol import MasterProtocol
-import ipfilter
 
 LOG_FILENAME = 'pymaster.log'
 MAX_SERVERS_FOR_IP = 14
@@ -74,11 +73,6 @@ class PyMaster:
 
 	def serverLoop(self):
 		data, addr = self.sock.recvfrom(1024)
-
-		if ip_address(addr[0]) in ipfilter.ipfilter:
-			if not self.ipfilterRL.ratelimit(addr[0]):
-				log('Filter: %s:%d' % (addr[0], addr[1]))
-			return
 
 		if len(data) == 0:
 			return
