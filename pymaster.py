@@ -70,8 +70,6 @@ class PyMaster:
 		self.sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 		self.sock.bind((ip, port))
 
-		log("Welcome to PyMaster!")
-		log("I ask you again, are you my master?")
 		log("Running on %s:%d" % (ip, port))
 
 	def serverLoop(self):
