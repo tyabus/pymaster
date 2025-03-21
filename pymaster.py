@@ -104,6 +104,7 @@ class PyMaster:
 		gamedir  = 'valve'
 		clver    = None
 		nat      = 0
+		buildnum = None
 
 		for i in range(0, len(split), 2):
 			try:
@@ -117,6 +118,8 @@ class PyMaster:
 					clver = v
 				elif k == 'protocol':
 					protocol = int(v)
+				elif k == 'buildnum':
+					buildnum = v
 				# somebody is playing :)
 				elif k == 'thisismypcid' or k == 'heydevelopersifyoureadthis':
 					self.fakeInfoForOldVersions(gamedir, addr)
@@ -127,6 +130,10 @@ class PyMaster:
 				pass
 
 		if( clver == None ): # Probably an old vulnerable version
+			self.fakeInfoForOldVersions(gamedir, addr)
+			return
+
+		if( buildnum == None and gamedir == "cstrike" ): # Probably an old vulnerable version
 			self.fakeInfoForOldVersions(gamedir, addr)
 			return
 
