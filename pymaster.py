@@ -157,7 +157,7 @@ class PyMaster:
 
 	def fakeInfoForOldVersions(self, gamedir, addr):
 		def sendFakeInfo(sock, warnmsg, gamedir, addr):
-			baseReply = b"\xff\xff\xff\xffinfo\n\host\\" + warnmsg.encode('utf-8') + b"\map\\update\dm\\0\\team\\0\coop\\0\\numcl\\32\maxcl\\32\\gamedir\\" + gamedir.encode('latin-1') + b"\\"
+			baseReply = b"\xff\xff\xff\xffinfo\n\host\\" + warnmsg.encode('utf-8') + b"\map\\update\dm\\0\\team\\0\coop\\0\\numcl\\32\maxcl\\32\\gamedir\\" + gamedir.encode('latin-1')
 			sock.sendto(baseReply, addr)
 
 		sendFakeInfo(self.sock, "This version is not", gamedir, addr)
